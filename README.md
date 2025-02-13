@@ -14,7 +14,7 @@ A **Console Application**, on the other hand, is more suited to simpler, finite 
 
 The application is integrated by this main components:
 
-1. ChatCompletion Service ()
+1. ChatCompletion Service
 
 2. Embedding Service (for translating the PDF content into Vectors for storing them in a VectorDataBase)
 
