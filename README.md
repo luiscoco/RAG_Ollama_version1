@@ -24,9 +24,19 @@ The application is integrated by this main components:
 
 ## 2. How to run the application 
 
-Create an API Key in OpenAI for the Embeddings Service
+### 2.1 Create an API Key in OpenAI for the Embeddings Service
 
 https://platform.openai.com/settings/organization/api-keys
+
+### 2.2. Run Ollama phi3:latest in your local machine
+
+Download Ollama from the web page: https://ollama.com/download
+
+Run Ollama phi3:latest AI model
+
+![image](https://github.com/user-attachments/assets/0c9bcb91-2c13-4a6f-9ef4-8df76907a5d8)
+
+### 2.3. Set the appsettings.json options
 
 Select the ChatCompletion (Ollama) and EmbeddingService (OpenAI) in the configuration file, see as follows
 
