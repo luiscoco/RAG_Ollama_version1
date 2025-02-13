@@ -28,15 +28,93 @@ Create an API Key in OpenAI for the Embeddings Service
 
 https://platform.openai.com/settings/organization/api-keys
 
-Select the ChatCompletion (Ollama) and EmbeddingService (OpenAI) in the configuration file
+Select the ChatCompletion (Ollama) and EmbeddingService (OpenAI) in the configuration file, see as follows
 
 **appsettings.json**
 
 ```json
-
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "None"
+    }
+  },
+  "AIServices": {
+    "AzureOpenAI": {
+      "Endpoint": "https://luisaiservice.openai.azure.com/",
+      "ChatDeploymentName": "gpt-4o",
+      "ApiKey": ""
+    },
+    "AzureOpenAIEmbeddings": {
+      "Endpoint": "https://luisaiservice.openai.azure.com/",
+      "DeploymentName": "text-embedding-ada-002",
+      "ApiKey": ""
+    },
+    "OpenAI": {
+      "ModelId": "gpt-4o",
+      "ApiKey": "",
+      "OrgId": null
+    },
+    "OpenAIEmbeddings": {
+      "ModelId": "text-embedding-3-small",
+      "ApiKey": "",
+      "OrgId": null
+    },
+    "Ollama": {
+      "Endpoint": "http://localhost:11434",
+      "Model": "phi3:latest"
+    },
+    "OllamaEmbeddings": {
+      "Endpoint": "http://localhost:11434",
+      "Model": "mxbai-embed-large:latest"
+    }
+  },
+  "VectorStores": {
+    "AzureAISearch": {
+      "Endpoint": "",
+      "ApiKey": ""
+    },
+    "AzureCosmosDBMongoDB": {
+      "ConnectionString": "",
+      "DatabaseName": ""
+    },
+    "AzureCosmosDBNoSQL": {
+      "ConnectionString": "",
+      "DatabaseName": ""
+    },
+    "Qdrant": {
+      "Host": "localhost",
+      "Port": 6334,
+      "Https": false,
+      "ApiKey": ""
+    },
+    "Redis": {
+      "ConnectionConfiguration": "localhost:6379"
+    },
+    "Weaviate": {
+      "Endpoint": "http://localhost:8080/v1/"
+    }
+  },
+  "Rag": {
+    "AIChatService": "Ollama",
+    "AIEmbeddingService": "OpenAIEmbeddings",
+    "BuildCollection": true,
+    "CollectionName": "pdfcontent",
+    "DataLoadingBatchSize": 10,
+    "DataLoadingBetweenBatchDelayInMilliseconds": 1000,
+    "PdfFilePaths": [ "C:\\Ollama phi3\\RAG-v1-validated_RAG_OllamaChatCompletion\\myfirstPDF.pdf" ],
+    "VectorStoreType": "InMemory"
+  }
+}
 ```
 
+**IMPORTANT NOTE**: it is mandatory to fill the API Key for OpenAI Embeddings API Key
 
+```
+ "OpenAIEmbeddings": {
+      "ModelId": "text-embedding-3-small",
+      "ApiKey:"XXXXXXXXXXXXXXXXXXXX"
+```
 
 
 
